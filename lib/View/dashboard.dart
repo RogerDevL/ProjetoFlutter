@@ -21,7 +21,7 @@ class Dashboard extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 208, 222, 233),
+      backgroundColor: const Color.fromARGB(231, 242, 248, 255),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -43,7 +43,9 @@ class Dashboard extends StatelessWidget {
                             Text(
                               "Faça",
                               style: TextStyle(
-                                  fontSize: 36, fontWeight: FontWeight.bold),
+                                fontSize: 36,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                             Text(
                               "Seu",
@@ -54,7 +56,25 @@ class Dashboard extends StatelessWidget {
                               "Cadastro",
                               style: TextStyle(
                                   fontSize: 36, fontWeight: FontWeight.bold),
-                            )
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 100.0),
+                              child: Row(
+                                children: [
+                                  Text("Já possui uma conta?   "),
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                          builder: (context) => Telalogin(),
+                                        ),
+                                      );
+                                    },
+                                    child: Text("Login"),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -67,6 +87,7 @@ class Dashboard extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: Container(
                 child: TextField(
+                  controller: nameController,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Nome',
@@ -78,6 +99,7 @@ class Dashboard extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: Container(
                 child: TextField(
+                  controller: emailController,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Email',
@@ -89,6 +111,7 @@ class Dashboard extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: Container(
                 child: TextField(
+                  controller: senhaController,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Senha',
@@ -103,32 +126,38 @@ class Dashboard extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      salvaInfo();
-                    },
-                    child: Text("Cadastrar"),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      if (cadastros.isNotEmpty) {
-                        //Navegar
+                      if (nameController.text.isEmpty ||
+                          emailController.text.isEmpty ||
+                          senhaController.text.isEmpty) {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Text("Erro"),
+                              content: Text(
+                                  "Por favor,  cadastrar pelo menos 1 usuário!"),
+                              actions: [
+                                TextButton(
+                                  child: Text("OK"),
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      } else {
+                        salvaInfo();
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) => Telalogin(),
                           ),
                         );
-                      } else {
-                        const snackBar = SnackBar(
-                          content:
-                              Text('Precisa cadastrar pelo menos 1 usuário!'),
-                        );
-
-                        // Find the ScaffoldMessenger in the widget tree
-                        // and use it to show a SnackBar.
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
                       }
                     },
-                    child: Text("Login"),
-                  ),
+                    child: Text("Cadastrar"),
+                  )
                 ],
               ),
             )

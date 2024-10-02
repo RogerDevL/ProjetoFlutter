@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_flutter/models/cadastro_model.dart';
 
 class Telalogin extends StatelessWidget {
   const Telalogin({super.key});
@@ -44,6 +45,7 @@ class Telalogin extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
+                if(true){}
                 //salvaInfo();
               },
               child: Text("Login"),
