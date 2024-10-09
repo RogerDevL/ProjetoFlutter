@@ -21,7 +21,7 @@ class Dashboard extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(231, 242, 248, 255),
+      backgroundColor: Color.fromARGB(255, 189, 188, 187),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -62,16 +62,23 @@ class Dashboard extends StatelessWidget {
                               child: Row(
                                 children: [
                                   Text("Já possui uma conta?   "),
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.of(context).push(
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
                                         MaterialPageRoute(
-                                          builder: (context) => Telalogin(),
-                                        ),
+                                            builder: (context) => Telalogin()),
                                       );
                                     },
-                                    child: Text("Login"),
-                                  ),
+                                    child: Text(
+                                      "Login",
+                                      style: TextStyle(
+                                        decoration: TextDecoration.underline,
+                                        color: Colors.blue,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  )
                                 ],
                               ),
                             ),
@@ -125,6 +132,7 @@ class Dashboard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   ElevatedButton(
+                    style: ElevatedButton.styleFrom(minimumSize: Size(350, 40)),
                     onPressed: () {
                       if (nameController.text.isEmpty ||
                           emailController.text.isEmpty ||

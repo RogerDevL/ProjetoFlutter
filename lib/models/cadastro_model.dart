@@ -9,3 +9,4 @@ class CadastroModel {
     required this.senha
   });
 }
+

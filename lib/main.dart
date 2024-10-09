@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_flutter/View/cadastro_pet.dart';
 import 'package:projeto_flutter/View/dashboard.dart';
 import 'package:projeto_flutter/View/telaCards.dart';
 import 'package:projeto_flutter/View/telaLogin.dart';
