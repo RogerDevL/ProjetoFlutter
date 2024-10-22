@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_flutter/View/card_detalhe_pet.dart';
 import 'package:projeto_flutter/models/card_pet.dart';
 
 class card_pets extends StatelessWidget {
@@ -17,9 +18,24 @@ class card_pets extends StatelessWidget {
           borderRadius: BorderRadius.circular(15.0)),
       child: Column(
         children: [
-          Image.asset(
-            pet.imagem,
-            height: 80,
+          const SizedBox(
+            height: 10,
+          ),
+           InkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => CardDetalhePet(
+                    pet: pet,
+                  ),
+                ),
+              );
+            },
+            child: Image.asset(
+              pet.imagem,
+              height: 80,
+              fit: BoxFit.fill,
+            ),
           ),
           Text(
             pet.raca,

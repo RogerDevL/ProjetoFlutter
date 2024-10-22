@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/View/cadastro_pet.dart';
+import 'package:projeto_flutter/View/dashboard.dart';
 import 'package:projeto_flutter/View/telaLogin.dart';
+import 'package:projeto_flutter/View/tela_usuario.dart';
 import 'package:projeto_flutter/mock/cards_fake_db.dart';
 import 'package:projeto_flutter/widgets/card_pet.dart';
 
@@ -25,19 +27,36 @@ class Telacards extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          "Encontre seu Pet",
+                          "Pet Adopt",
                           style: TextStyle(
                               fontSize: 26, fontWeight: FontWeight.bold),
                           textAlign: TextAlign.center,
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.only(left: 145.0),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.location_on),
-                            Text("Cotia, São Paulo"),
+                            IconButton(
+                              icon: Icon(Icons.arrow_back_ios),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Dashboard()),
+                                );
+                              },
+                            ),
+                            IconButton(
+                              icon: Icon(Icons.person_rounded),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => TelaUsuario()),
+                                );
+                              },
+                            ),
                           ],
                         ),
                       ),
@@ -61,7 +80,7 @@ class Telacards extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Pets   ",
+                      "Pets",
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -106,13 +125,13 @@ class Telacards extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(00.0),
                 child: Container(
+                    width: double.infinity,
                     color: const Color.fromARGB(255, 189, 188, 187), // co
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Column(
                         children: [
-                          Text(
-                              "Estudos apontam que no Brasil existem cerca de 55.1 milhões de cães (ABIMPET, 2019), 10% deles em estado de abandono – em grande parte, decorrente da procriação descontrolada ou não planejada. Tomando como exemplo a cidade de São Paulo, isso significa +200 mil cães sem um lar de referência.  Ou seja, há uma enorme carência de lares para tanto bicho. Por isso, pense com carinho: você realmente não pode manter esse animal?"),
+                          Text("Você realmente não pode manter esse animal?"),
                           GestureDetector(
                               onTap: () {
                                 Navigator.push(
