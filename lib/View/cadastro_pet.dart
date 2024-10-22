@@ -15,7 +15,7 @@ class CadastroPet extends StatelessWidget {
               Container(
                 width: double.infinity,
                 height: 80,
-                color: const Color.fromARGB(255, 189, 188, 187),
+                color: const Color.fromARGB(255, 188, 238, 245),
                 child: Row(
                   children: [
                     Padding(
@@ -45,83 +45,78 @@ class CadastroPet extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(20.0),
                 child: TextFormField(
                   decoration: InputDecoration(
+                    border: InputBorder.none,
                     labelText: 'Nome do Pet',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
                     ),
-                    filled: true,
-                    fillColor: Colors.white,
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(20.0),
                 child: TextFormField(
                   decoration: InputDecoration(
+                    border: InputBorder.none,
                     labelText: 'Raça',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
                     ),
-                    filled: true,
-                    fillColor: Colors.white,
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(20.0),
                 child: TextFormField(
                   decoration: InputDecoration(
+                    border: InputBorder.none,
                     labelText: 'Idade',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
                     ),
-                    filled: true,
-                    fillColor: Colors.white,
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(20.0),
                 child: TextFormField(
                   decoration: InputDecoration(
+                    border: InputBorder.none,
                     labelText: 'Sexo',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
                     ),
-                    filled: true,
-                    fillColor: Colors.white,
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: TextFormField(
                   decoration: InputDecoration(
+                    border: InputBorder.none,
                     labelText: 'Descrição',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
                     ),
-                    filled: true,
-                    fillColor: Colors.white,
                   ),
-                  maxLines: 3,
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: TextField(
                   decoration: InputDecoration(
-                    labelText: 'Image',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+                    border: InputBorder.none,
+                    labelText: 'Imagem',
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
                     ),
                     filled: true,
                     fillColor: Colors.white,
@@ -132,7 +127,7 @@ class CadastroPet extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(minimumSize: Size(350, 40)),
                 onPressed: () {},
@@ -144,6 +139,9 @@ class CadastroPet extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 30,
+              )
             ],
           ),
         ),

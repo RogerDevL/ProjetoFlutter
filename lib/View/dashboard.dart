@@ -29,50 +29,66 @@ class Dashboard extends StatelessWidget {
                 child: Stack(
                   children: [
                     Image.asset(
-                      'assets/images/download.jpg',
+                      'assets/images/dashboard.jpg',
                       fit: BoxFit.cover,
                       width: double.infinity,
+                      height: 860,
                     ),
                     Center(
                       child: Padding(
-                        padding: const EdgeInsets.only(top: 20.0),
+                        padding: const EdgeInsets.only(top: 150.0),
                         child: Column(
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(
-                                  left: 16.0, right: 16.00, top: 10.0),
+                                  left: 30.0, right: 30.00, top: 10.0),
                               child: Container(
                                 child: TextField(
                                   controller: nameController,
-                                  decoration: const InputDecoration(
-                                    border: OutlineInputBorder(),
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    icon: Icon(Icons.person),
                                     labelText: 'Nome',
+                                    enabledBorder: UnderlineInputBorder(
+                                      borderSide:
+                                          BorderSide(color: Colors.grey),
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(
-                                  left: 16.0, right: 16.00, top: 10.0),
+                                  left: 30.0, right: 30.00, top: 10.0),
                               child: Container(
                                 child: TextField(
                                   controller: emailController,
-                                  decoration: const InputDecoration(
-                                    border: OutlineInputBorder(),
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    icon: Icon(Icons.email),
                                     labelText: 'Email',
+                                    enabledBorder: UnderlineInputBorder(
+                                      borderSide:
+                                          BorderSide(color: Colors.grey),
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(
-                                  left: 16.0, right: 16.00, top: 10.0),
+                                  left: 30.0, right: 30.00, top: 10.0),
                               child: Container(
                                 child: TextField(
                                   controller: senhaController,
-                                  decoration: const InputDecoration(
-                                    border: OutlineInputBorder(),
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    icon: Icon(Icons.lock),
                                     labelText: 'Senha',
+                                    enabledBorder: UnderlineInputBorder(
+                                      borderSide:
+                                          BorderSide(color: Colors.grey),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -85,7 +101,7 @@ class Dashboard extends StatelessWidget {
                                 children: [
                                   ElevatedButton(
                                     style: ElevatedButton.styleFrom(
-                                        minimumSize: Size(200, 40)),
+                                        minimumSize: Size(300, 40)),
                                     onPressed: () {
                                       if (nameController.text.isEmpty ||
                                           emailController.text.isEmpty ||

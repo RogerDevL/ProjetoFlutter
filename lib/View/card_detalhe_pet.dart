@@ -101,8 +101,9 @@ class CardDetalhePet extends StatelessWidget {
                       width: 340,
                       height: 60,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: const Color.fromARGB(255, 141, 148, 141)),
+                        borderRadius: BorderRadius.circular(20),
+                        color: const Color.fromARGB(255, 160, 212, 255),
+                      ),
                       child: TextButton(
                         style: ButtonStyle(
                           foregroundColor: MaterialStateProperty.all<Color>(
@@ -115,7 +116,10 @@ class CardDetalhePet extends StatelessWidget {
                             ),
                           );
                         },
-                        child: Text('Voltar'),
+                        child: Text(
+                          'Voltar',
+                          style: TextStyle(color: Colors.black),
+                        ),
                       ),
                     ),
                   ),

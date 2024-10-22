@@ -19,7 +19,7 @@ class Telacards extends StatelessWidget {
             children: [
               Center(
                 child: Container(
-                  color: const Color.fromARGB(255, 189, 188, 187),
+                  color: const Color.fromARGB(255, 206, 223, 240),
                   width: double.infinity,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -79,11 +79,14 @@ class Telacards extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "Pets",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                    Padding(
+                      padding: const EdgeInsets.only(right: 5.0),
+                      child: Text(
+                        "Pets",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     Icon(Icons.pets),
@@ -91,11 +94,11 @@ class Telacards extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(30.0),
+                padding: const EdgeInsets.all(10.0),
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(5.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -108,8 +111,8 @@ class Telacards extends StatelessWidget {
                                 const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 2,
                               childAspectRatio: 0.8,
-                              crossAxisSpacing: 20.0,
-                              mainAxisSpacing: 20.0,
+                              crossAxisSpacing: 10.0,
+                              mainAxisSpacing: 10.0,
                             ),
                             itemBuilder: (context, index) {
                               return GestureDetector(
@@ -126,7 +129,7 @@ class Telacards extends StatelessWidget {
                 padding: const EdgeInsets.all(00.0),
                 child: Container(
                     width: double.infinity,
-                    color: const Color.fromARGB(255, 189, 188, 187), // co
+                    color: const Color.fromARGB(255, 220, 232, 243), // co
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Column(
@@ -152,7 +155,7 @@ class Telacards extends StatelessWidget {
                                   "Divulgue",
                                   style: TextStyle(
                                     decoration: TextDecoration.underline,
-                                    color: Colors.blue,
+                                    color: const Color.fromARGB(255, 0, 0, 0),
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
